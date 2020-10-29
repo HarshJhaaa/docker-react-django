@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  backend:
+    image: hitlerway/backend
+    
+    volumes:
+      - ./backend:/app/backend/
+    ports:
+      - "8000:8000"
+    stdin_open: true
+    tty: true
+    command: ["python", "backend/manage.py", "runserver", "0.0.0.0:8000"]
+  frontend:
+    image: hitlerway/frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    command: npm start
