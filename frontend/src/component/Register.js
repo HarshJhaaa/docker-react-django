@@ -8,7 +8,7 @@ function Register() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [message,setMessage] = useState([])
   function Getdata(){
-    axios.get('http://hitlerway.pythonanywhere.com/api/users/')
+    axios.get('http://0.0.0.0:8000/auth/api/users/')
     .then((response) =>{
       console.log(response.data)
       setMessage(response.data)
@@ -23,7 +23,7 @@ function Register() {
     onSubmit: values =>{
       axios({
         method:'post',
-        url:'http://hitlerway.pythonanywhere.com/api/users/',
+        url:'http://0.0.0.0:8000/auth/api/users/',
         data: values
       }).then((response)=>{
         setLoggedIn(true);
