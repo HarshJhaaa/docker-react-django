@@ -7,7 +7,7 @@ function Greet (props){
   const [dis , setDis] = useState(true);
 
     function greety(){
-      axios.get('http://hitlerway.pythonanywhere.com/api/greet/', {
+      axios.get('http://0.0.0.0:8000/api/greet/', {
         headers: {
             'Authorization': `token ${props.token}`
           }
