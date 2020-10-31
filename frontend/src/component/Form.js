@@ -21,7 +21,7 @@ function Form(props) {
     onSubmit: values =>{
       axios({
         method:'post',
-        url:'http://hitlerway.pythonanywhere.com/auth/',
+        url:'hhttp://0.0.0.0:8000/auth/',
         data: values
       })
       .then((response)=>{
